@@ -95,4 +95,20 @@
 		status = "okay";
 	};
 
+	spdif_codec: spdif_codec{
+		#sound-dai-cells = <0>;
+		compatible = "amlogic, aml-spdif-codec";
+		pinctrl-names = "audio_spdif_out";
+		pinctrl-0 = <&audio_spdif_out_pins>;
+	};
+
+};
+
+&pinctrl_periphs {
+	audio_spdif_out_pins:audio_spdif_out_pins {
+		mux {
+			groups = "spdif_out";
+			function = "spdif_out";
+		};
+	};
 };
